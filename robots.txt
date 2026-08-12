@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://[PRODUCTION_DOMAIN]/sitemap.xml

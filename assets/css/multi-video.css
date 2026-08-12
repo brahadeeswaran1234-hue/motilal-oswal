@@ -1,0 +1,165 @@
+/* ==========================================================================
+   Multi-Video Component - Classic Clean Video Player with Authentic Play Button
+   ========================================================================== */
+
+.multi-video-container {
+  padding: 40px 16px 60px;
+  background: #ffffff;
+}
+
+.multi-video-wrapper {
+  max-width: 1248px;
+  margin: 0 auto;
+}
+
+.multi-video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+@media (max-width: 768px) {
+  .multi-video-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.mo-video-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  background: #000000;
+  aspect-ratio: 16 / 9;
+}
+
+.mo-video-thumb-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.mo-video-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mo-video-watermark {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 3px 8px;
+  border-radius: 4px;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+/* Classic semi-transparent dark play button */
+.mo-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, background 0.2s ease;
+  z-index: 3;
+  padding: 0;
+}
+
+.mo-play-btn svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 3px;
+  fill: #ffffff;
+}
+
+.mo-video-card:hover .mo-play-btn {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.mo-video-controls-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.85) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  color: #ffffff;
+  z-index: 3;
+  gap: 12px;
+}
+
+.mo-ctrl-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mo-ctrl-play,
+.mo-ctrl-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.mo-ctrl-play svg,
+.mo-ctrl-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+}
+
+.mo-ctrl-time {
+  font-size: 11px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+  color: #e2e8f0;
+  white-space: nowrap;
+}
+
+.mo-ctrl-progress {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 2px;
+  position: relative;
+  cursor: pointer;
+}
+
+.mo-progress-fill {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+.mo-ctrl-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
