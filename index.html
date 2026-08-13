@@ -2288,9 +2288,6 @@
     <a href="https://wa.me/919498003440?text=Hi%2C%20I%20would%20like%20help%20with%20opening%20an%20account" class="whatsapp-action whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
       <span aria-hidden="true">💬</span>
     </a>
-    <a href="mailto:brahadeeswaran1234@gmail.com?subject=Need%20help%20with%20investment%20services&body=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services%20and%20account%20opening%20options." class="whatsapp-action mail" aria-label="Mail us">
-      <span aria-hidden="true">✉️</span>
-    </a>
   </div>
 
   <button type="button" class="whatsapp-float" aria-label="Open contact options" aria-expanded="false">
@@ -2302,7 +2299,6 @@
   (function () {
     const wrapper = document.querySelector('.whatsapp-float-wrapper');
     const toggleButton = wrapper && wrapper.querySelector('.whatsapp-float');
-    const mailLink = wrapper && wrapper.querySelector('.whatsapp-action.mail');
 
     if (!wrapper || !toggleButton) return;
 
@@ -2311,16 +2307,6 @@
       const isOpen = wrapper.classList.toggle('is-open');
       toggleButton.setAttribute('aria-expanded', String(isOpen));
     });
-
-    if (mailLink) {
-      mailLink.addEventListener('click', function (event) {
-        event.stopPropagation();
-        const mailtoUrl = this.getAttribute('href');
-        if (mailtoUrl) {
-          window.location.href = mailtoUrl;
-        }
-      });
-    }
 
     document.addEventListener('click', function (event) {
       if (!wrapper.contains(event.target)) {
