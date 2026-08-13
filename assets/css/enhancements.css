@@ -433,62 +433,10 @@ button[aria-label="Pause Carousel"],
   border-color: #2b2e8c;
 }
 
-/* 11. Floating Demat Bar */
-.floating-demat-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #ffffff;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  transition: transform 0.3s ease;
-}
-
-.floating-demat-bar.hidden {
-  transform: translateY(100%);
-}
-
-.floating-demat-bar form {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  max-width: 700px;
-  width: 100%;
-}
-
-.floating-demat-bar input {
-  padding: 8px 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  font-size: 13px;
-  outline: none;
-}
-
-.floating-demat-bar button {
-  background: #2b2e8c;
-  color: #ffffff;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 13px;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
+/* 11. Floating Demat Bar: removed from active UI */
+.floating-demat-bar,
 .floating-demat-close {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #64748b;
-  font-size: 16px;
-  padding: 4px;
+  display: none !important;
 }
 
 /* 12. Toast Container */

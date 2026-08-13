@@ -617,34 +617,7 @@ function closeModal(modalId) {
 }
 
 /* ==========================================================================
-   9. Floating Bottom Demat Bar
-   ========================================================================== */
-function initFloatingBar() {
-  const bar = document.querySelector('.floating-demat-bar');
-  const closeBtn = document.querySelector('.floating-demat-close');
-  if (!bar) return;
-
-  let isClosed = false;
-
-  window.addEventListener('scroll', () => {
-    if (isClosed) return;
-    if (window.scrollY > 350) {
-      bar.classList.remove('hidden');
-    } else {
-      bar.classList.add('hidden');
-    }
-  }, { passive: true });
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      isClosed = true;
-      bar.classList.add('hidden');
-    });
-  }
-}
-
-/* ==========================================================================
-   10. Accordions
+   9. Accordions
    ========================================================================== */
 function initAccordions() {
   document.querySelectorAll('.accordion-header').forEach(header => {

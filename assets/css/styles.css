@@ -369,8 +369,8 @@
 
 .whatsapp-float-wrapper {
     position: fixed;
-    right: 22px;
-    bottom: 22px;
+    right: calc(22px + env(safe-area-inset-right));
+    bottom: calc(22px + env(safe-area-inset-bottom));
     z-index: 9999;
     display: flex;
     flex-direction: column;
@@ -524,12 +524,12 @@
 
 @media (max-width: 520px) {
     .whatsapp-float-wrapper {
-        right: 16px;
-        bottom: 16px;
+        right: calc(14px + env(safe-area-inset-right));
+        bottom: calc(14px + env(safe-area-inset-bottom));
     }
     .whatsapp-float {
-        width: 52px;
-        height: 52px;
+        width: 56px;
+        height: 56px;
         font-size: 1.35rem;
         animation: none;
     }
@@ -537,8 +537,8 @@
         gap: 10px;
     }
     .whatsapp-action {
-        width: 42px;
-        height: 42px;
+        width: 48px;
+        height: 48px;
     }
     .whatsapp-float::after,
     .whatsapp-float::before {
