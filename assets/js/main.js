@@ -7,16 +7,26 @@
    0. Partner Configuration & Tracking Architecture
    ========================================================================== */
 window.PARTNER_CONFIG = {
-  clientName: "[CLIENT_NAME]",
-  productionDomain: "[PRODUCTION_DOMAIN]", // e.g. "https://demo-opal-sigma-80.vercel.app" or client domain
-  gaMeasurementId: "[GA4_MEASUREMENT_ID]", // Replace with actual GA4 ID (e.g. "G-XXXXXXXXXX")
-  partnerName: "motilal_oswal",
-  defaultUtmSource: "partner_website",
-  defaultUtmMedium: "referral",
-  partnerReferralCode: "[PARTNER_REFERRAL_CODE]" // Optional referral / sub-broker code
+  // ─── REQUIRED before production ──────────────────────────────────────────────
+  clientName:          "[CLIENT_NAME]",          // e.g. "Sharma Investments"
+  productionDomain:    "[PRODUCTION_DOMAIN]",    // e.g. "https://www.yourdomain.com"
+  gaMeasurementId:     "[GA4_MEASUREMENT_ID]",   // e.g. "G-XXXXXXXXXX"
+  partnerReferralCode: "[PARTNER_REFERRAL_CODE]", // Sub-broker / referral code (optional)
+
+  // ─── Partner account-opening URL — SINGLE SOURCE OF TRUTH ───────────────────
+  // All [data-partner-url] anchor elements in index.html are stamped with this
+  // value at runtime by initPartnerUrls(). Change it here ONLY.
+  // REQUIRED: Replace placeholder before going live.
+  partnerUrl: "https://mosl.co/MOSWEB/Od8RzT6Rh1",
+
+  // ─── Internal / do not change ────────────────────────────────────────────────
+  partnerName:       "motilal_oswal",
+  defaultUtmSource:  "partner_website",
+  defaultUtmMedium:  "referral"
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  initPartnerUrls();      // Must run first — stamps CTA hrefs before any click can fire
   initPartnerTracking();
   initStickyHeader();
   initMobileDrawer();
@@ -133,6 +143,32 @@ function initPartnerTracking() {
         link.setAttribute('href', updatedHref);
       }
     }
+  });
+}
+
+/* ==========================================================================
+   1b. Partner URL Initializer
+       Reads PARTNER_CONFIG.partnerUrl and stamps it onto every anchor element
+       that carries the [data-partner-url] attribute. This keeps index.html
+       free of hard-coded partner URLs — change the URL in PARTNER_CONFIG only.
+   ========================================================================== */
+function initPartnerUrls() {
+  var cfg = window.PARTNER_CONFIG;
+
+  // Safety guard: skip if partnerUrl is still a placeholder or not set
+  if (!cfg.partnerUrl || cfg.partnerUrl.indexOf('[') !== -1) {
+    console.warn(
+      '[PARTNER_CONFIG] partnerUrl is not configured. ' +
+      'CTA links will remain inactive until a real URL is provided.'
+    );
+    return;
+  }
+
+  // Stamp every [data-partner-url] anchor with the central partner URL.
+  // data-partner-cta is already present on these elements, so the existing
+  // click-tracker in initPartnerTracking() will fire automatically.
+  document.querySelectorAll('a[data-partner-url]').forEach(function (link) {
+    link.setAttribute('href', cfg.partnerUrl);
   });
 }
 

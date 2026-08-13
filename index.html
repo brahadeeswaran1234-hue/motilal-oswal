@@ -2280,9 +2280,45 @@
 </div>
 
 <!-- WhatsApp Chat Button -->
-<a href="https://wa.me/919498003440?text=Hi%2C%20I%20would%20like%20help%20with%20opening%20an%20account" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
-  <span aria-hidden="true">💬</span>
-</a>
+<div class="whatsapp-float-wrapper" aria-label="Quick contact actions">
+  <div class="whatsapp-quick-actions" aria-label="Contact options">
+    <a href="tel:+919498003440" class="whatsapp-action call" aria-label="Call us">
+      <span aria-hidden="true">📞</span>
+    </a>
+    <a href="https://wa.me/919498003440?text=Hi%2C%20I%20would%20like%20help%20with%20opening%20an%20account" class="whatsapp-action whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+      <span aria-hidden="true">💬</span>
+    </a>
+    <a href="mailto:brahadeeswaran1234@gmail.com" class="whatsapp-action mail" aria-label="Mail us">
+      <span aria-hidden="true">✉️</span>
+    </a>
+  </div>
+
+  <button type="button" class="whatsapp-float" aria-label="Open contact options" aria-expanded="false">
+    <span aria-hidden="true">💬</span>
+  </button>
+</div>
+
+<script>
+  (function () {
+    const wrapper = document.querySelector('.whatsapp-float-wrapper');
+    const toggleButton = wrapper && wrapper.querySelector('.whatsapp-float');
+
+    if (!wrapper || !toggleButton) return;
+
+    toggleButton.addEventListener('click', function (event) {
+      event.preventDefault();
+      const isOpen = wrapper.classList.toggle('is-open');
+      toggleButton.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!wrapper.contains(event.target)) {
+        wrapper.classList.remove('is-open');
+        toggleButton.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>
 
 <!-- Main Interactive Script -->
 <script src="assets/js/main.js" defer></script>
