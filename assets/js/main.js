@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initPartnerUrls();      // Must run first — stamps CTA hrefs before any click can fire
   initPartnerTracking();
   initStickyHeader();
-  initMobileDrawer();
   initSearchBox();
   initDematForms();
   initSipCalculator();
