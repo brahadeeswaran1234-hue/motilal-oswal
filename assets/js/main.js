@@ -1,5 +1,5 @@
 /**
- * [CLIENT_NAME] - Partner Platform for Motilal Oswal Financial Services
+ * Brahadeeswaran - Partner Platform for Motilal Oswal Financial Services
  * Core Interactive Controller & Partner Analytics Tracker
  */
 
@@ -8,8 +8,8 @@
    ========================================================================== */
 window.PARTNER_CONFIG = {
   // ─── REQUIRED before production ──────────────────────────────────────────────
-  clientName:          "[CLIENT_NAME]",          // e.g. "Sharma Investments"
-  productionDomain:    "[PRODUCTION_DOMAIN]",    // e.g. "https://www.yourdomain.com"
+  clientName:          "Brahadeeswaran",          // e.g. "Sharma Investments"
+  productionDomain:    "https://motilaloswalpartner.vercel.app",    // e.g. "https://www.yourdomain.com"
   gaMeasurementId:     "G-T4DXB88B0F",            // e.g. "G-XXXXXXXXXX"
   partnerReferralCode: "[PARTNER_REFERRAL_CODE]", // Sub-broker / referral code (optional)
 
@@ -72,7 +72,7 @@ function initPartnerTracking() {
       cta_name: ctaName || 'general_cta',
       cta_location: ctaLocation || 'page_body',
       destination: destinationUrl || 'https://www.motilaloswal.com/',
-      client: cfg.clientName || '[CLIENT_NAME]',
+      client: cfg.clientName || 'Brahadeeswaran',
       timestamp: new Date().toISOString()
     };
 
