@@ -10,7 +10,7 @@ window.PARTNER_CONFIG = {
   // ─── REQUIRED before production ──────────────────────────────────────────────
   clientName:          "[CLIENT_NAME]",          // e.g. "Sharma Investments"
   productionDomain:    "[PRODUCTION_DOMAIN]",    // e.g. "https://www.yourdomain.com"
-  gaMeasurementId:     "[GA4_MEASUREMENT_ID]",   // e.g. "G-XXXXXXXXXX"
+  gaMeasurementId:     "G-T4DXB88B0F",            // e.g. "G-XXXXXXXXXX"
   partnerReferralCode: "[PARTNER_REFERRAL_CODE]", // Sub-broker / referral code (optional)
 
   // ─── Partner account-opening URL — SINGLE SOURCE OF TRUTH ───────────────────
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSipCalculator();
   initCarousel();
   initModals();
-  initFloatingBar();
+
   initAccordions();
 });
 
@@ -47,7 +47,7 @@ function initPartnerTracking() {
   // 1. If valid GA4 Measurement ID is provided, dynamically inject gtag
   if (cfg.gaMeasurementId && 
       cfg.gaMeasurementId.startsWith('G-') && 
-      !cfg.gaMeasurementId.includes('X') && 
+      cfg.gaMeasurementId !== 'G-XXXXXXXXXX' && 
       !cfg.gaMeasurementId.includes('[') && 
       !window.gtag) {
     const gaScript = document.createElement('script');
