@@ -11,7 +11,7 @@ window.PARTNER_CONFIG = {
   clientName:          "Brahadeeswaran",          // e.g. "Sharma Investments"
   productionDomain:    "https://motilaloswalpartner.vercel.app",    // e.g. "https://www.yourdomain.com"
   gaMeasurementId:     "G-T4DXB88B0F",            // e.g. "G-XXXXXXXXXX"
-  partnerReferralCode: "[PARTNER_REFERRAL_CODE]", // Sub-broker / referral code (optional)
+  partnerReferralCode: "[PARTNER_REFERRAL_CODE]", // CLIENT INPUT REQUIRED: Replace with official sub-broker/referral code when provided. The guard on line ~108 prevents this from being sent while it contains "[". Do NOT invent a value.
 
   // ─── Partner account-opening URL — SINGLE SOURCE OF TRUTH ───────────────────
   // All [data-partner-url] anchor elements in index.html are stamped with this
@@ -130,6 +130,15 @@ function initPartnerTracking() {
                           link.closest('header, footer, .section, .mo-modal-backdrop')?.className || 'page_section';
 
       window.trackPartnerClick(ctaName, ctaLocation, href);
+
+      // Fire dedicated account_cta_click for partner account-opening CTAs only
+      if (link.hasAttribute('data-partner-url') && typeof window.gtag === 'function') {
+        window.gtag('event', 'account_cta_click', {
+          cta_name: ctaName,
+          cta_location: ctaLocation,
+          partner: cfg.partnerName || 'motilal_oswal'
+        });
+      }
 
       // Enforce outbound link safety
       if (!link.getAttribute('rel')) {
@@ -522,6 +531,14 @@ function initModals() {
   document.querySelectorAll('[data-open-modal="dematModal"]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
+      // Fire dedicated demat_cta_click event
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'demat_cta_click', {
+          cta_location: 'navigation_or_button',
+          partner: (window.PARTNER_CONFIG && window.PARTNER_CONFIG.partnerName) || 'motilal_oswal'
+        });
+      }
+      // Keep existing partner tracking event
       if (typeof window.trackPartnerClick === 'function') {
         window.trackPartnerClick('open_demat_modal_triggered', 'navigation_or_button', 'demat_modal');
       }
