@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    Motilal Oswal Web Application - Pixel-Perfect UI & Interactivity Styles
    ========================================================================== */
 
@@ -500,5 +500,65 @@ button[aria-label="Pause Carousel"],
 
   .landing-demat-form .home-page-form .submit-btn {
     width: 100% !important;
+  }
+}
+
+/* 14. SEO Service Descriptions
+   Crawlable text section for Equity, Mutual Funds/SIP, IPO.
+   Sits directly below the link-cards block; matches site design tokens. */
+.seo-service-descriptions {
+  background: #f0f4ff;
+  padding: 32px 16px 40px;
+}
+
+.seo-service-descriptions__grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.seo-service-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+}
+
+.seo-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(43, 46, 140, 0.1);
+  border-color: var(--color-navy);
+}
+
+.seo-service-card h3 {
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin: 0 0 8px;
+  letter-spacing: -0.1px;
+}
+
+.seo-service-card p {
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .seo-service-descriptions__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .seo-service-descriptions__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
