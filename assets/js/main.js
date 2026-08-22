@@ -9,7 +9,7 @@
 window.PARTNER_CONFIG = {
   // ─── REQUIRED before production ──────────────────────────────────────────────
   clientName:          "Brahadeeswaran",          // e.g. "Sharma Investments"
-  productionDomain:    "https://motilaloswalpartner.vercel.app",    // e.g. "https://www.yourdomain.com"
+  productionDomain:    "https://motilaloswalpartner.com",    // e.g. "https://www.yourdomain.com"
   gaMeasurementId:     "G-T4DXB88B0F",            // e.g. "G-XXXXXXXXXX"
   partnerReferralCode: "[PARTNER_REFERRAL_CODE]", // CLIENT INPUT REQUIRED: Replace with official sub-broker/referral code when provided. The guard on line ~108 prevents this from being sent while it contains "[". Do NOT invent a value.
 
