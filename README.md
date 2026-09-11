@@ -13,7 +13,7 @@ A modern, high-performance, and responsive web application for **Motilal Oswal F
 - **📈 Interactive Financial SIP & Wealth Calculator**: Real-time wealth projections with monthly investment, return rate (p.a.), and tenure sliders, live visual ratios, and formatted INR currency outputs.
 - **🎠 Highlights Carousel Slider**: Touch-swipe enabled hero carousel with autoplay, manual navigation arrows, pause/play toggle, and slide indicator dots.
 - **📱 Mobile Navigation Drawer**: Smooth slide-in navigation drawer with backdrop blur and accessible keyboard controls (`Escape` to close).
-- **🔒 Modals & Sticky Demat Bar**: Interactive "Open Demat Account" modal, "Client Login" modal, and bottom floating demat bar with smooth reveal on scroll.
+- **🔒 Modals & Sticky Demat Bar**: Interactive "Open Demat Account" modal, simulated OTP verification flow, and bottom floating demat bar with smooth reveal on scroll.
 - **🛡️ Vercel Deployment Ready**: Pre-configured `vercel.json` with security headers (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`) and static asset caching.
 
 ---

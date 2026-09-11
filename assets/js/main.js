@@ -525,7 +525,7 @@ function initCarousel() {
 }
 
 /* ==========================================================================
-   8. Modals (Demat, OTP, Login) & Outbound Partner Navigation
+   8. Modals (Demat, OTP) & Outbound Partner Navigation
    ========================================================================== */
 function initModals() {
   document.querySelectorAll('[data-open-modal="dematModal"]').forEach(btn => {
@@ -543,16 +543,6 @@ function initModals() {
         window.trackPartnerClick('open_demat_modal_triggered', 'navigation_or_button', 'demat_modal');
       }
       openModal('dematModal');
-    });
-  });
-
-  document.querySelectorAll('[data-open-modal="loginModal"], .login-button, .partner-button').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (typeof window.trackPartnerClick === 'function') {
-        window.trackPartnerClick('login_modal_triggered', 'header_login_button', 'login_modal');
-      }
-      openModal('loginModal');
     });
   });
 

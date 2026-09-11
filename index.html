@@ -56,7 +56,7 @@
     <link rel="stylesheet" href="assets/css/search-box.css">
     <link rel="stylesheet" href="assets/css/navbar-buttons.css">
     <link rel="stylesheet" href="assets/css/partner-button.css">
-    <link rel="stylesheet" href="assets/css/login-button.css">
+
     <link rel="stylesheet" href="assets/css/navbar-links.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/fragment.css">
@@ -409,7 +409,7 @@
         </div>
       </div><button class="mo-search-mobile-btn"><img src="assets/icons/home-search-blue.svg" alt="search-icon" width="24" height="24"></button></div></div>
             <div class="navbar-buttons">
-              <div class="navbar-button-wrapper hide-in-desktop"><a href="https://invest.motilaloswal.com/" class="navbar-buttons navbar-button nav-btn-transparent hide-in-desktop nav-btn-orange block">CUSTOMER LOGIN</a></div><div class="navbar-button-wrapper hide-in-desktop"><a href="https://mofirst.motilaloswal.com/MOFirst/partnerlogin" class="navbar-buttons navbar-button nav-btn-transparent hide-in-desktop nav-btn-orange block">PARTNER LOGIN</a></div><div class="navbar-button-wrapper hide-in-desktop"><a href="https://invest.motilaloswal.com/?category=INSTREQUEST" class="navbar-buttons navbar-button nav-btn-transparent hide-in-desktop nav-btn-orange block">INSTITUTIONAL LOGIN</a></div><div class="navbar-button-wrapper hide-in-mobile"><a href="https://www.motilaloswal.com/" target="" class="nav-btn-white navbar-buttons navbar-button hide-in-mobile block">Login</a></div><div class="navbar-button-wrapper"><a href="#" data-partner-url data-partner-cta data-cta-name="Open Demat Account" data-cta-location="navbar" class="navbar-buttons navbar-button nav-btn-orange top-menu-button block">Open Demat Account</a></div><div class="navbar-button-wrapper hide-in-desktop"><a href="https://prd.motilaloswal.com/referral-associate/registration?tab=login" class="navbar-buttons navbar-button nav-btn-orange hide-in-desktop nav-btn-transparent block">Referral Associate</a></div>
+              <div class="navbar-button-wrapper"><a href="#" data-partner-url data-partner-cta data-cta-name="Open Demat Account" data-cta-location="navbar" class="navbar-buttons navbar-button nav-btn-orange top-menu-button block">Open Demat Account</a></div>
             </div>
           </div>
           <div class="navbar-bottom-section">
@@ -1847,7 +1847,7 @@
             </a>
           </div>
     </div><div class="navbar-buttons btns-in-drawer">
-    <div class="navbar-button-wrapper hide-in-desktop"><a href="https://invest.motilaloswal.com/" class="navbar-buttons navbar-button nav-btn-transparent hide-in-desktop nav-btn-orange block">CUSTOMER LOGIN</a></div><div class="navbar-button-wrapper hide-in-desktop"><a href="https://mofirst.motilaloswal.com/MOFirst/partnerlogin" class="navbar-buttons navbar-button nav-btn-transparent hide-in-desktop nav-btn-orange block">PARTNER LOGIN</a></div><div class="navbar-button-wrapper hide-in-desktop"><a href="https://invest.motilaloswal.com/?category=INSTREQUEST" class="navbar-buttons navbar-button nav-btn-transparent hide-in-desktop nav-btn-orange block">INSTITUTIONAL LOGIN</a></div><div class="navbar-button-wrapper hide-in-mobile"><a href="https://www.motilaloswal.com/" target="" class="nav-btn-white navbar-buttons navbar-button hide-in-mobile block">Login</a></div><div class="navbar-button-wrapper"><a href="#" data-partner-url data-partner-cta data-cta-name="Open Demat Account" data-cta-location="navbar" class="navbar-buttons navbar-button nav-btn-orange top-menu-button block">Open Demat Account</a></div><div class="navbar-button-wrapper hide-in-desktop"><a href="https://prd.motilaloswal.com/referral-associate/registration?tab=login" class="navbar-buttons navbar-button nav-btn-orange hide-in-desktop nav-btn-transparent block">Referral Associate</a></div>
+    <div class="navbar-button-wrapper"><a href="#" data-partner-url data-partner-cta data-cta-name="Open Demat Account" data-cta-location="navbar" class="navbar-buttons navbar-button nav-btn-orange top-menu-button block">Open Demat Account</a></div>
   </div></div>
     </div>
   </div></div></header>
@@ -2388,27 +2388,6 @@
     </div>
     <button type="button" class="submit-btn" id="verifyOtpBtn" style="margin-top:12px;">Verify & Complete Setup</button>
     <p style="font-size:13px;color:#64748b;margin-top:14px;">Didn't receive OTP? <a href="#" onclick="showToast('New OTP sent!', 'info');return false;" style="color:#2b2e8c;font-weight:600;">Resend OTP</a></p>
-  </div>
-</div>
-
-<!-- Login Modal -->
-<div class="mo-modal-backdrop" id="loginModal">
-  <div class="mo-modal-card">
-    <button class="mo-modal-close" data-modal-close aria-label="Close modal">✕</button>
-    <h3 class="mo-modal-title">Client Login</h3>
-    <p class="mo-modal-subtitle">Access your trading terminal & portfolio analytics.</p>
-    <form class="custom-form" onsubmit="event.preventDefault(); showToast('Logging into Motilal Oswal trading portal...', 'success'); setTimeout(()=>{closeModal('loginModal')},1000);">
-      <div class="input-wrap">
-        <label for="login-id" class="sr-only">Client ID / Mobile</label>
-        <input type="text" id="login-id" placeholder="Client ID / Registered Mobile" required>
-      </div>
-      <div class="input-wrap">
-        <label for="login-pass" class="sr-only">Password / PIN</label>
-        <input type="password" id="login-pass" placeholder="Password or 6-digit PIN" required style="width:100%;padding:14px 16px 14px 44px;border:1.5px solid #d1d5db;border-radius:8px;outline:none;">
-      </div>
-      <button type="submit" class="submit-btn">Login to Riise / Research 360</button>
-      <p style="font-size:13px;text-align:center;color:#64748b;margin-top:16px;">Don't have an account? <a href="#" data-open-modal="dematModal" style="color:#2b2e8c;font-weight:600;">Open Free Demat</a></p>
-    </form>
   </div>
 </div>
 
