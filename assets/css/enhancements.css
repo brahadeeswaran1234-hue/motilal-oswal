@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    Motilal Oswal Web Application - Pixel-Perfect UI & Interactivity Styles
    ========================================================================== */
 
@@ -271,44 +271,9 @@ button[aria-label="Pause Carousel"],
   display: none !important;
 }
 
-/* 8. Investment Opportunities Cards & Market Leaders Cards */
-.link-cards > div {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 20px !important;
-}
-
-@media (max-width: 1024px) {
-  .link-cards > div {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-
-@media (max-width: 600px) {
-  .link-cards > div {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-.link-cards > div > div {
-  background: #ffffff !important;
-  border: 1px solid #e5e7eb !important;
-  border-radius: 12px !important;
-  padding: 24px 20px !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
-  transition: all 0.25s ease !important;
-  text-align: center !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  min-height: 140px !important;
-}
-
-.link-cards > div > div:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 10px 24px rgba(43, 46, 140, 0.1) !important;
-  border-color: #2b2e8c !important;
+/* 8. Investment Opportunities & Section Containers */
+.link-cards-container {
+  padding: 40px 16px !important;
 }
 
 /* 9. CTA Buttons in Sections */

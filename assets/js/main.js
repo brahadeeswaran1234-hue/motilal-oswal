@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
 
   initAccordions();
+  initInvestmentCards();
 });
 
 /* ==========================================================================
@@ -635,6 +636,47 @@ function initAccordions() {
         body.style.display = parent.classList.contains('active') ? 'block' : 'none';
       }
     });
+  });
+}
+
+/* ==========================================================================
+   10. Interactive Investment Option Cards (Hover & Touch Support)
+   ========================================================================== */
+function initInvestmentCards() {
+  const cards = document.querySelectorAll('.link-cards.block .link-card-item');
+  if (!cards.length) return;
+
+  cards.forEach(card => {
+    // Touch & Click toggle for mobile/tablet
+    card.addEventListener('click', () => {
+      const isAlreadyActive = card.classList.contains('is-active');
+      cards.forEach(c => c.classList.remove('is-active'));
+      if (!isAlreadyActive) {
+        card.classList.add('is-active');
+      }
+    });
+
+    // Keyboard accessibility: Enter or Space toggles the card info
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const isAlreadyActive = card.classList.contains('is-active');
+        cards.forEach(c => c.classList.remove('is-active'));
+        if (!isAlreadyActive) {
+          card.classList.add('is-active');
+        }
+      } else if (e.key === 'Escape') {
+        card.classList.remove('is-active');
+        card.blur();
+      }
+    });
+  });
+
+  // Close active card when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.link-card-item')) {
+      cards.forEach(c => c.classList.remove('is-active'));
+    }
   });
 }
 
