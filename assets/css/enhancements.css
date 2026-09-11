@@ -220,12 +220,7 @@ h2, main h2, .section h2 {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-}
-
-.highlights-slide a {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  cursor: default;
 }
 
 .highlights-img {
@@ -235,6 +230,8 @@ h2, main h2, .section h2 {
   display: block;
   margin: 0 auto;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  cursor: default;
+  user-select: none;
 }
 
 .highlights-dots {
