@@ -1,0 +1,38 @@
+﻿{
+  "name": "Brahadeeswaran | Motilal Oswal Partner",
+  "short_name": "MO Partner",
+  "description": "Open a Demat account with Brahadeeswaran, an authorized Motilal Oswal partner. Access stock trading, mutual funds, SIP and investment services.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#1e2268",
+  "background_color": "#1e2268",
+  "lang": "en-IN",
+  "categories": ["finance", "business"],
+  "icons": [
+    {
+      "src": "assets/images/media_1e6e0387a7129ff5a9d5de06272986e045326ad74.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/media_1e6e0387a7129ff5a9d5de06272986e045326ad74.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/images/media_1c4a89851742a2cc4794bb1623f5c5afad196ad68.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Motilal Oswal Partner Homepage"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
