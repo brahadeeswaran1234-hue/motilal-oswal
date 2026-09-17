@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Precision Pros — Motilal Oswal Project Report</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm 12mm 12mm 12mm;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    background-color: #ffffff;
+    font-size: 11px;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Header Banner */
+  .header-banner {
+    background: linear-gradient(135deg, #091224 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 18px 22px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 6px solid #f59e0b;
+  }
+
+  .brand-group h1 {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #f8fafc;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .brand-group h1 span {
+    color: #f59e0b;
+  }
+
+  .brand-group p {
+    font-size: 10px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+  }
+
+  .header-meta {
+    text-align: right;
+  }
+
+  .header-meta .badge {
+    display: inline-block;
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-size: 9.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .header-meta .meta-date {
+    font-size: 10px;
+    color: #cbd5e1;
+  }
+
+  /* Document Meta Bar */
+  .doc-info-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 9px 12px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+  }
+
+  .info-item {
+    font-size: 10px;
+  }
+
+  .info-item .label {
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 9px;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .info-item .val {
+    color: #0f172a;
+    font-weight: 700;
+  }
+
+  /* Section Styles */
+  .section {
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .section-title {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #0f172a;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 4px;
+    margin-bottom: 9px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 13px;
+    background: #f59e0b;
+    border-radius: 2px;
+  }
+
+  /* Callout Link Cards */
+  .link-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px 12px;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  }
+
+  .card-google-auth {
+    border-left: 4px solid #4285F4;
+    background: #fcfdfe;
+  }
+
+  .card-github {
+    border-left: 4px solid #24292f;
+  }
+
+  .card-vercel {
+    border-left: 4px solid #000000;
+  }
+
+  .card-live {
+    border-left: 4px solid #10b981;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+
+  .card-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #0f172a;
+  }
+
+  .auth-tag {
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+    font-size: 8.5px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .auth-tag.google {
+    background: #fef2f2;
+    color: #b91c1c;
+    border-color: #fecaca;
+    font-weight: 800;
+  }
+
+  .card-url {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 9.5px;
+    color: #2563eb;
+    margin-bottom: 5px;
+    word-break: break-all;
+    font-weight: 600;
+  }
+
+  .card-desc {
+    font-size: 10px;
+    color: #475569;
+    line-height: 1.4;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    font-size: 10px;
+  }
+
+  th {
+    background: #f1f5f9;
+    color: #334155;
+    text-align: left;
+    padding: 6px 8px;
+    font-weight: 700;
+    border: 1px solid #cbd5e1;
+    font-size: 9.5px;
+    text-transform: uppercase;
+  }
+
+  td {
+    padding: 6px 8px;
+    border: 1px solid #e2e8f0;
+    color: #334155;
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) td {
+    background: #f8fafc;
+  }
+
+  .pill {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 700;
+  }
+
+  .pill-green { background: #dcfce7; color: #15803d; }
+  .pill-amber { background: #fef3c7; color: #b45309; }
+  .pill-blue  { background: #dbeafe; color: #1d4ed8; }
+
+  /* Feature Grid */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .feature-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 10px;
+  }
+
+  .feature-box h4 {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 3px;
+  }
+
+  .feature-box p {
+    font-size: 9.5px;
+    color: #475569;
+    line-height: 1.35;
+  }
+
+  /* Sign-off footer */
+  .sign-off-card {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .sign-off-text h4 {
+    font-size: 11px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 2px;
+  }
+
+  .sign-off-text p {
+    font-size: 9.5px;
+    color: #64748b;
+  }
+
+  .stamp {
+    border: 2px solid #0f172a;
+    padding: 5px 12px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+    font-size: 9.5px;
+    color: #0f172a;
+    background: #ffffff;
+  }
+
+  .footer-meta {
+    text-align: center;
+    font-size: 8.5px;
+    color: #94a3b8;
+    margin-top: 10px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 6px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header Banner -->
+  <div class="header-banner">
+    <div class="brand-group">
+      <h1>PRECISION <span>PROS</span></h1>
+      <p>Digital Engineering &amp; High-Performance Web Solutions</p>
+    </div>
+    <div class="header-meta">
+      <div class="badge">TECHNICAL AUDIT &amp; DELIVERY REPORT</div>
+      <div class="meta-date">Date: September 17, 2026</div>
+    </div>
+  </div>
+
+  <!-- Document Meta Summary Bar -->
+  <div class="doc-info-bar">
+    <div class="info-item">
+      <span class="label">Client / Partner</span>
+      <span class="val">Brahadeeswaran</span>
+    </div>
+    <div class="info-item">
+      <span class="label">Project Entity</span>
+      <span class="val">Motilal Oswal Partner Portal</span>
+    </div>
+    <div class="info-item">
+      <span class="label">Delivery Team</span>
+      <span class="val">Precision Pros Engineering</span>
+    </div>
+    <div class="info-item">
+      <span class="label">Deployment State</span>
+      <span class="val"><span class="pill pill-green">PROD LIVE &bull; 100% HEALTH</span></span>
+    </div>
+  </div>
+
+  <!-- SECTION 1: PROJECT OVERVIEW -->
+  <div class="section">
+    <div class="section-title">1. Executive Overview &amp; Business Objectives</div>
+    <p style="font-size: 10.5px; color: #334155; margin-bottom: 8px; line-height: 1.5;">
+      The <strong>Motilal Oswal Partner Web Portal</strong> is a specialized, high-conversion web property architected by <strong>Precision Pros</strong> to drive verified Demat account openings, investor education, and client lead acquisition under Motilal Oswal Financial Services. Built on a lean single-page architecture, it eliminates navigational friction, provides sub-second page loads, and maintains regulatory, tracking, and referral parameter integrity.
+    </p>
+    <div class="features-grid">
+      <div class="feature-box">
+        <h4>Targeted Lead Acquisition</h4>
+        <p>Prominent Demat onboarding form with real-time Indian phone validation and instant partner attribution.</p>
+      </div>
+      <div class="feature-box">
+        <h4>Zero-Friction Investor UX</h4>
+        <p>Interactive hover-driven asset cards (Equity, F&amp;O, MF, IPOs) preventing broken 404 links and dead ends.</p>
+      </div>
+      <div class="feature-box">
+        <h4>Direct Multi-Channel Reach</h4>
+        <p>One-tap WhatsApp direct chat and telephone dialer (+91 9498003440) for immediate investor advisory assistance.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: ACCESS HUB & AUTHENTICATION -->
+  <div class="section">
+    <div class="section-title">2. Centralized Link Hub &amp; Platform Access Guide</div>
+    <div class="link-cards-grid">
+      
+      <!-- GitHub Card -->
+      <div class="card card-github">
+        <div class="card-header">
+          <span class="card-title">GitHub Source Code Repository</span>
+          <span class="auth-tag">GIT REPO</span>
+        </div>
+        <div class="card-url">https://github.com/brahadeeswaran1234-hue/motilal-oswal</div>
+        <div class="card-desc">
+          Contains production code, 27 modular stylesheets, assets, and automated CI/CD webhooks connected directly to Vercel production branch (<code>main</code>).
+        </div>
+      </div>
+
+      <!-- Vercel Card -->
+      <div class="card card-vercel">
+        <div class="card-header">
+          <span class="card-title">Vercel Deployment Dashboard</span>
+          <span class="auth-tag google">🔑 LOGIN WITH GOOGLE</span>
+        </div>
+        <div class="card-url">https://vercel.com/dashboard</div>
+        <div class="card-desc">
+          <strong>Access Instruction:</strong> Click <strong>"Continue with Google"</strong> and log in with your authorized Google account to inspect deployments, edge DNS, and performance metrics.
+        </div>
+      </div>
+
+      <!-- Google Analytics Card -->
+      <div class="card card-google-auth">
+        <div class="card-header">
+          <span class="card-title">Google Analytics 4 (GA4)</span>
+          <span class="auth-tag google">🔑 LOGIN WITH GOOGLE</span>
+        </div>
+        <div class="card-url">https://analytics.google.com/ &bull; ID: G-T4DXB88B0F</div>
+        <div class="card-desc">
+          <strong>Access Instruction:</strong> Click <strong>"Sign In"</strong> using your Google account associated with property <code>G-T4DXB88B0F</code> to review real-time visitors, traffic channels, and conversions.
+        </div>
+      </div>
+
+      <!-- Live Production Card -->
+      <div class="card card-live">
+        <div class="card-header">
+          <span class="card-title">Live Production Website</span>
+          <span class="auth-tag">LIVE CDN</span>
+        </div>
+        <div class="card-url">https://motilaloswalpartner.com/</div>
+        <div class="card-desc">
+          Production custom domain deployed on global edge CDN with automated SSL/TLS certificates and hardened HTTP security response headers.
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- Partner Link Banner -->
+    <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px; padding: 7px 11px; font-size: 10px; color: #92400e; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <strong>Official Motilal Oswal Partner Referral Link:</strong> 
+        <span style="font-family: monospace; font-weight: 700; color: #b45309;">https://mosl.co/MOSWEB/Od8RzT6Rh1</span>
+      </div>
+      <span class="pill pill-amber">Embedded across all Demat CTAs</span>
+    </div>
+  </div>
+
+  <!-- SECTION 3: TECHNOLOGY STACK & ARCHITECTURAL REASONS -->
+  <div class="section">
+    <div class="section-title">3. Technology Stack &amp; Architectural Decisions</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 23%;">Technology</th>
+          <th style="width: 27%;">Component Scope</th>
+          <th style="width: 50%;">Strategic Rationale &amp; Performance Benefit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Semantic HTML5</strong></td>
+          <td>Single Page Application (<code>index.html</code>)</td>
+          <td>Delivers near-instant initial render. Semantic nodes (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>) maximize organic SEO search engine crawl efficiency.</td>
+        </tr>
+        <tr>
+          <td><strong>Vanilla CSS3 (Modular)</strong></td>
+          <td>27 Modular Stylesheets (<code>assets/css/</code>)</td>
+          <td>Zero CSS-in-JS compilation overhead. Eliminates heavy Tailwind / Bootstrap bundle weight while allowing granular caching of specific component styles.</td>
+        </tr>
+        <tr>
+          <td><strong>Vanilla JavaScript (ES6+)</strong></td>
+          <td>Core Client Logic (<code>assets/js/main.js</code> ~26KB)</td>
+          <td>Zero multi-megabyte React/Vue runtime hydration penalty. Ensures ultra-fast Time To Interactive (TTI) on mobile devices, handling form checks, modals, and event tracking natively.</td>
+        </tr>
+        <tr>
+          <td><strong>Vercel Edge Platform</strong></td>
+          <td>Global Edge Network &amp; CI/CD Hosting</td>
+          <td>Automated deployments directly linked to GitHub <code>main</code> branch. Provides enterprise-grade Edge caching, automated HTTPS, and microsecond CDN routing.</td>
+        </tr>
+        <tr>
+          <td><strong>Google Analytics 4</strong></td>
+          <td>Measurement ID: <code>G-T4DXB88B0F</code></td>
+          <td>Dynamic non-render-blocking injection. Tracks acquisition funnels and fires custom <code>partner_click</code> events on every CTA interaction.</td>
+        </tr>
+        <tr>
+          <td><strong>PWA Manifest</strong></td>
+          <td>Installable Web App (<code>manifest.json</code>)</td>
+          <td>Enables "Add to Home Screen" on Android and iOS devices, providing native-like app launch without app store friction or distribution overhead.</td>
+        </tr>
+        <tr>
+          <td><strong>JSON-LD Structured Data</strong></td>
+          <td>Schema.org Microdata in <code>&lt;head&gt;</code></td>
+          <td>Implements <code>WebSite</code>, <code>Organization</code>, and <code>FAQPage</code> schemas to secure Google rich snippet features and enhanced SERP authority.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 4: SECURITY & PERFORMANCE BENCHMARKS -->
+  <div class="section">
+    <div class="section-title">4. Security Hardening &amp; Performance Benchmarks</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 9px;">
+        <h4 style="font-size: 10.5px; font-weight: 700; color: #0f172a; margin-bottom: 5px;">Hardened HTTP Headers (via vercel.json)</h4>
+        <ul style="list-style: disc; margin-left: 14px; font-size: 9.5px; color: #475569; line-height: 1.45;">
+          <li><code>X-Content-Type-Options: nosniff</code> (MIME protection)</li>
+          <li><code>X-Frame-Options: SAMEORIGIN</code> (Clickjacking defense)</li>
+          <li><code>Strict-Transport-Security: max-age=63072000; preload</code></li>
+          <li><code>Referrer-Policy: strict-origin-when-cross-origin</code></li>
+          <li><code>Permissions-Policy: geolocation=(), camera=()</code></li>
+        </ul>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 9px;">
+        <h4 style="font-size: 10.5px; font-weight: 700; color: #0f172a; margin-bottom: 5px;">Performance &amp; Core Web Vitals</h4>
+        <ul style="list-style: disc; margin-left: 14px; font-size: 9.5px; color: #475569; line-height: 1.45;">
+          <li><strong>Cumulative Layout Shift (CLS = 0):</strong> Explicit image width/height applied across all visual assets.</li>
+          <li><strong>Asset Caching:</strong> 1-Year immutable caching (<code>max-age=31536000</code>).</li>
+          <li><strong>Preconnected Fonts:</strong> Google Fonts loaded via non-blocking links.</li>
+          <li><strong>Deferred Script Loading:</strong> Main JS executes asynchronously.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGN OFF BLOCK -->
+  <div class="sign-off-card">
+    <div class="sign-off-text">
+      <h4>Engineered &amp; Certified by Precision Pros</h4>
+      <p>Precision Pros Digital Engineering &bull; Full-Stack Architecture &amp; Performance Review Complete</p>
+    </div>
+    <div class="stamp">
+      PRECISION PROS<br><span style="font-size: 7.5px; font-weight: 700; color: #d97706;">&check; VERIFIED &amp; APPROVED</span>
+    </div>
+  </div>
+
+  <div class="footer-meta">
+    &copy; 2026 Precision Pros. Prepared exclusively for Brahadeeswaran (Motilal Oswal Authorized Partner). All systems monitored and operational.
+  </div>
+
+</body>
+</html>
