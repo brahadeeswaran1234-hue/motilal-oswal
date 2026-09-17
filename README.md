@@ -13,7 +13,7 @@
   A modern, ultra-fast, and responsive web portal engineered for <strong>Motilal Oswal Financial Services</strong> authorized partner <strong>Brahadeeswaran</strong>, optimized for zero layout shift (CLS = 0), verified referral conversion tracking, and instantaneous edge delivery.
 </p>
 
-[🌐 Live Website](https://motilaloswalpartner.com/) • [📊 Vercel Console](https://vercel.com/dashboard) • [📈 Google Analytics](https://analytics.google.com/) • [🔗 Partner Referral](https://mosl.co/MOSWEB/Od8RzT6Rh1) • [📁 PDF Report](Precision_Pros_Motilal_Oswal_Project_Report.pdf)
+[🌐 Live Website](https://motilaloswalpartner.com/) • [📊 Vercel Console](https://vercel.com/dashboard) • [📈 Google Analytics](https://analytics.google.com/) • [🔗 Partner Referral](https://mosl.co/MOSWEB/Od8RzT6Rh1)
 
 </div>
 
@@ -100,8 +100,6 @@ d:\motilal-oswal\
 ├── vercel.json                                  # Edge routing, security headers & asset caching rules
 ├── package.json                                 # Local development tooling (serve)
 ├── README.md                                    # Comprehensive project documentation
-├── Precision_Pros_Motilal_Oswal_Report.html     # Precision Pros executive report template
-├── Precision_Pros_Motilal_Oswal_Project_Report.pdf # Precision Pros 2-page compiled executive PDF
 └── assets/
     ├── css/                                     # 27 modular component stylesheets
     │   ├── styles.css                           # Base typography & global reset
